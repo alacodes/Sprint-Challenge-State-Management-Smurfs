@@ -8,5 +8,5 @@ export default function Smurf(props) {
             <p>{props.smurf.age}</p>
             <p>{props.smurf.height}</p>
         </div>
-    )
+    );
 }
