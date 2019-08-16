@@ -9,14 +9,16 @@ import {
   } from "shards-react";
   
   import React from "react";
-  
+  import './App.css';
+
   function Smurf(props) {
     return (
-      <Card style={{ maxWidth: "300px" }}>
+      <Card style={{ maxWidth: "400px" }}>
         <CardHeader>The Smurf</CardHeader>
         <CardImg
           width="200px"
-          src="https://i.pinimg.com/originals/df/0d/9f/df0d9ff2a9f4166bb4e02e2ff0513bf6.jpg"
+          src="smurf.png"
+        
         />
         <CardBody>
           <CardTitle>{props.smurf.name}</CardTitle>
