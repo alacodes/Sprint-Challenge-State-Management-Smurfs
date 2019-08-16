@@ -1,12 +1,30 @@
-
-import React from 'react';
-
-export default function Smurf(props) {
+import {
+    Card,
+    CardHeader,
+    CardTitle,
+    CardImg,
+    CardBody,
+    CardFooter,
+    Button
+  } from "shards-react";
+  
+  import React from "react";
+  
+  function Smurf(props) {
     return (
-        <div>
-            <p>{props.smurf.name}</p>
-            <p>{props.smurf.age}</p>
-            <p>{props.smurf.height}</p>
-        </div>
+      <Card style={{ maxWidth: "300px" }}>
+        <CardHeader>The Smurf</CardHeader>
+        <CardImg
+          width="200px"
+          src="https://i.pinimg.com/originals/df/0d/9f/df0d9ff2a9f4166bb4e02e2ff0513bf6.jpg"
+        />
+        <CardBody>
+          <CardTitle>{props.smurf.name}</CardTitle>
+          <p>{props.smurf.age} years old</p>
+          <p>{props.smurf.height} tall</p>
+        </CardBody>
+      </Card>
     );
-}
+  }
+  
+  export default Smurf;

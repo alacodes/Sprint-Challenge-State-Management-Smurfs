@@ -1,15 +1,37 @@
-import React from "react";
-//{ Component }
-import Smurfs from './Smurfs';
-import CreateSmurf from './CreateSmurf';
+import React, { Component, useEffect } from "react";
+import "./App.css";
+import { getData, FETCH_SMURF_DATA_FAILURE } from "../actions";
+import { connect } from "react-redux";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardImg,
+  CardBody,
+  CardFooter,
+  Button
+} from "shards-react";
 
-
-export default function App() {
+import SmurfsList from "./SmurfsList.js";
+function App(props) {
+  useEffect(() => {
+    props.getData();
+  }, []);
+  console.log(props, "props");
   return (
-    <div>
-      <Smurfs />
-      <CreateSmurf />
+    <div className="App">
+      <SmurfsList />
     </div>
   );
 }
 
+const mapStateToProps = state => {
+  return {
+    isLoading: state.isLoading,
+    smurfs: state.smurfs
+  };
+};
+export default connect(
+  mapStateToProps,
+  { getData }
+)(App);
